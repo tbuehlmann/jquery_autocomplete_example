@@ -2,12 +2,12 @@ class MoviesController < ApplicationController
   # GET /movies
   # GET /movies.xml
   def index
-    if params[:q]
+    if params[:q] # for autocompletion
       @movies = Movie.where('name LIKE ?', "#{params[:q]}%").map(&:name).join("\n")
-    elsif params[:search]
-      @movies = Movie.where('name LIKE ?', "#{params[:search]}%")
+    elsif params[:search] # regular search
+      @movies = Movie.where('name LIKE ?', "#{params[:search]}%").paginate(:page => params[:page], :order => 'name DESC')
     else
-      @movies = Movie.all
+      @movies = Movie.paginate(:page => params[:page], :per_page => 10, :order => 'name DESC')
     end
 
     respond_to do |format|
