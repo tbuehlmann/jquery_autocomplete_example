@@ -2,11 +2,18 @@ class MoviesController < ApplicationController
   # GET /movies
   # GET /movies.xml
   def index
-    @movies = Movie.all
+    if params[:q]
+      @movies = Movie.where('name LIKE ?', "#{params[:q]}%").map(&:name).join("\n")
+    elsif params[:search]
+      @movies = Movie.where('name LIKE ?', "#{params[:search]}%")
+    else
+      @movies = Movie.all
+    end
 
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @movies }
+      format.js   { render :js => @movies } # autocomplete
     end
   end
 
