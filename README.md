@@ -1,5 +1,5 @@
 # JQuery Autocomplete Example
-This is a simple input field auto completion example for Rails 3 using the jquery.autocomplete plugin.
+This is a simple input field auto completion example for Rails 3 using the [JQuery Autocomplete](http://docs.jquery.com/Plugins/autocomplete "JQuery Autocomplete") plugin.
 
 ## Installation
     $ bundle install
