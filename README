@@ -1,9 +1,0 @@
-= JQuery Autocomplete Example
-This is a simple input field auto completion example for Rails 3 using the jquery.autocomplete plugin.
-
-== Installation
-<tt>$ bundle install</tt>
-<tt>$ rake db:migrate</tt>
-<tt>$ rake db:seed</tt>
-<tt>$ rails server</tt>
-
