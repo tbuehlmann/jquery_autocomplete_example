@@ -5,9 +5,9 @@ class MoviesController < ApplicationController
     if params[:q] # for autocompletion
       @movies = Movie.where('name LIKE ?', "#{params[:q]}%").map(&:name).join("\n")
     elsif params[:search] # regular search
-      @movies = Movie.where('name LIKE ?', "#{params[:search]}%").paginate(:page => params[:page], :order => 'name DESC')
+      @movies = Movie.where('name LIKE ?', "#{params[:search]}%").paginate(:page => params[:page], :per_page => 5, :order => 'name DESC')
     else
-      @movies = Movie.paginate(:page => params[:page], :per_page => 10, :order => 'name DESC')
+      @movies = Movie.paginate(:page => params[:page], :per_page => 5, :order => 'name DESC')
     end
 
     respond_to do |format|
