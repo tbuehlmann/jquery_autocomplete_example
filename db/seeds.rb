@@ -1,7 +1,33 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
-#   Mayor.create(:name => 'Daley', :city => cities.first)
+['Raiders of the Lost Ark',
+'Indiana Jones and the Temple of Doom',
+'Indiana Jones and the Last Crusade',
+'Indiana Jones and the Kingdom of the Crystal Skull',
+'Spaceballs',
+'Oldboy',
+'Back to the Future',
+'Back to the Future Part II',
+'Back to the Future Part III',
+'Pulp Fiction',
+'Reservoir Dogs',
+'Jackie Brown',
+'La soupe aux choux',
+'Four Rooms',
+'The Naked Gun: From the Files of Police Squad!',
+'The Naked Gun 2 1/2: The Smell of Fear',
+'Naked Gun 33 1/3: The Final Insult',
+'Star Wars',
+'Star Wars: Episode V - The Empire Strikes Back',
+'Star Wars: Episode VI - Return of the Jedi',
+'Star Wars: Episode I - The Phantom Menace',
+'Star Wars: Episode II - Attack of the Clones',
+'Star Wars: Episode III - Revenge of the Sith',
+'Stardust',
+'Donnie Darko',
+'Road Trip',
+'Top Gun',
+"Ocean's Eleven",
+"Ocean's Twelve",
+"Ocean's Thirteen"].each do |name|
+  Movie.create(:name => name)
+end
+
